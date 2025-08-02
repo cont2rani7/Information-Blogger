@@ -8,3 +8,4 @@ beautifulsoup4
 google-generativeai
 python-dotenv
 requests
+google_auth_oauthlib
