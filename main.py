@@ -1,4 +1,5 @@
 import os
+import logging
 from fetch_trending_topics import get_trending_topics
 from generate_content import generate_blog_content
 from tagging_and_category import detect_category_and_tags
