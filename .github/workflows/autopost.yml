@@ -1,4 +1,4 @@
-name: Daily AutoPost News
+name: Information Post
 
 on:
   schedule:
@@ -38,4 +38,4 @@ jobs:
           # CATEGORY_POLITICS: ${{ secrets.CATEGORY_POLITICS }}
 
         run: |
-          python autopost_gemini.py
+          python main.py
