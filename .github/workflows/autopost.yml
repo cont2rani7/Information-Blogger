@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run the auto-blogger script
-        run: python Information-Blogger/Information-Blogger/main.py
+        run: python Information-Blogger/main.py
 
       - name: Run Blogger Auto Poster
         run: python Information-Blogger/main.py
