@@ -3,3 +3,4 @@ djangorestframework
 Pillow
 gunicorn
 psycopg2-binary
+feedparser
