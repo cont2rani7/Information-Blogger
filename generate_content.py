@@ -8,19 +8,14 @@ def generate_blog_content(topic_title, gemini_api_key):
 
         # Prompt to Gemini
         prompt = f"""
-        Write a detailed blog post on the trending topic: "{topic_title}"
-                
+        Write a blog post on the trending topic: "{topic_title}".
+        
         Requirements:
         - SEO-friendly title (max 60 characters)
         - Short meta description (max 155 characters)
         - Main blog content (well-formatted HTML)
         - Use bullet points, subheadings, and a quote at the end.
         - Add relevant tags and categories based on the topic.
-        - Use HTML format structured with:
-        - <article>, <section>, <header>, <footer>
-        - Add bullet points, subheadings, and a quote
-        - Embed tags and category at the end in footer
-        - Tone: Informative, clean, easy to skim
 
         Respond in this format:
         Title: <your title>
@@ -28,8 +23,6 @@ def generate_blog_content(topic_title, gemini_api_key):
         Tags: tag1, tag2, tag3
         Category: category_name
         Content: <full HTML blog content>
-        # Content:
-        # <article>...</article>
         """
 
         response = model.generate_content(prompt)

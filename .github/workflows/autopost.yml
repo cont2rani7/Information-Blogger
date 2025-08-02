@@ -1,17 +1,19 @@
-name: Auto Blogger Post
+name: Daily AutoPost News
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
-  workflow_dispatch:  # Allow manual runs
+    - cron: '0 */3 * * *'  # Every 6 hours
+  workflow_dispatch:        # Allow manual run
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
 
-      - name: Set up Python
+    steps:
+      - name: 📦 Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -21,18 +23,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run the auto-blogger script
-        run: python Information-Blogger/main.py
-
-      - name: Run Blogger Auto Poster
-        run: python Information-Blogger/main.py
+      - name: 🚀 Run script
         env:
-          BLOGGER_API_KEY: ${{ secrets.BLOGGER_API_KEY }}
-          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
-          BLOGGER_EMAIL: ${{ secrets.BLOGGER_EMAIL }}
-          BLOGGER_PASSWORD: ${{ secrets.BLOGGER_PASSWORD }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          CREDENTIALS_JSON: ${{ secrets.CREDENTIALS_JSON }}
-          
-          
+          BLOG_ID: ${{ secrets.BLOG_ID }}
+          GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          # WP_URL: ${{ secrets.WP_URL }}
+          # WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          # WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          # CATEGORY_GENERAL: ${{ secrets.CATEGORY_GENERAL }}
+          # CATEGORY_ENTERTAINMENT: ${{ secrets.CATEGORY_ENTERTAINMENT }}
+          # CATEGORY_TECH: ${{ secrets.CATEGORY_TECH }}
+          # CATEGORY_SPORTS: ${{ secrets.CATEGORY_SPORTS }}
+          # CATEGORY_POLITICS: ${{ secrets.CATEGORY_POLITICS }}
+
+        run: |
+          python autopost_gemini.py

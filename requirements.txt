@@ -1,11 +1,5 @@
-google-generativeai==0.3.2
-google-auth==2.29.0
-google-api-python-client
-google-auth-oauthlib
-requests
-
-feedparser
-beautifulsoup4
-google-generativeai
-python-dotenv
-
+Django>=4.2
+djangorestframework
+Pillow
+gunicorn
+psycopg2-binary
