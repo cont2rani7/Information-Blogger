@@ -19,6 +19,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r Information-Blogger/requirements.txt
 
+      - name: Run the auto-blogger script
+        run: python Information-Blogger/Information-Blogger/main.py
+
       - name: Run Blogger Auto Poster
         run: python Information-Blogger/main.py
         env:
