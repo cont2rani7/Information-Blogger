@@ -4,3 +4,7 @@ Pillow
 gunicorn
 psycopg2-binary
 feedparser
+beautifulsoup4
+google-generativeai
+python-dotenv
+requests
