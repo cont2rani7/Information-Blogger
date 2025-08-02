@@ -3,3 +3,9 @@ google-auth==2.29.0
 google-api-python-client
 google-auth-oauthlib
 requests
+
+feedparser
+beautifulsoup4
+google-generativeai
+python-dotenv
+
