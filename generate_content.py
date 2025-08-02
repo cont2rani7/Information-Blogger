@@ -50,7 +50,7 @@ def generate_blog_content(topic_title, gemini_api_key):
                 content_index = lines.index(line)
                 result['content'] = "\n".join(lines[content_index + 1:])
                 break
-
+        print(f"✅ Content generated successfully for topic: {topic_title}")
         return result
 
     except Exception as e:
