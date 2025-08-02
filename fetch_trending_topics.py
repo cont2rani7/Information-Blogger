@@ -6,4 +6,5 @@ def get_trending_topics():
     topics = []
     for entry in feed.entries:
         topics.append({"title": entry.title, "url": entry.link})
+    print(f"Fetched {len(topics)} trending topics.")
     return topics
